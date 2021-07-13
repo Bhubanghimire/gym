@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'scanner',
     'api',
+    'django_extensions',
 
     'crispy_forms',
     'rest_framework',
