@@ -5,20 +5,23 @@
     <form action="" method="post">
         {% csrf_token %}
         <label for=""><b>Name</b></label>
-        <input type="text" name="name" class="form-control">
+        <input type="text" name="name" class="form-control" required>
         <label for=""><b>Contact</b></label>
-        <input type="tel" name="contact" class="form-control">
+        <input type="tel" name="contact" class="form-control" required>
         <label for=""><b>Email Id</b></label>
-        <input type="email" name="emailid" class="form-control">
+        <input type="email" name="emailid" class="form-control" required>
         <label for=""><b>Age</b></label>
-        <input type="text" name="age" class="form-control">
+        <input type="text" name="age" class="form-control" required>
         <br>
-        <label for=""><b>Gender</b></label>
-        <input type="radio" name="gender" value="male">Male
+
+        <label for="" required><b>Gender</b></label>
+        <input type="radio" name="gender" value="male" required>Male
         <input type="radio" name="gender" value="female">Female
         <br>
+
         <label for=""><b>Plan Name</b></label>
         <select name="plan" class="form-control" id="">
+            <option value=""></option>
             {% for i in plan %}
             <option value="{{i.name}}">{{i.name}}</option>
             {% endfor %}
@@ -28,16 +31,15 @@
         <input type="date" name="joindate" class="form-control">
         <label for=""><b>Expirey Date</b></label>
         <input type="date" name="expdate" value="2022/12/12" class="form-control">
-        <!-- <label for=""><b>Initial Amount</b></label>
-        <input type="text" name="initialamount" class="form-control">
-        <br> -->
-        <br>
-        <label for=""><b>Attendance</b></label>
+        <label for=""><b>Initial Amount</b></label>
+        <input type="text" name="initialamount" class="form-control" required>
+        
+        <!-- <label for=""><b>Attendance</b></label>
         <select name="attendance" class="form-control" id="">
             {% for i in attendance %}
             <option value="{{i.status}}">{{i.status}}</option>
             {% endfor %}
-        </select>
+        </select> -->
         <br><br>
         <input type="submit" value="Submit" class="btn btn-primary">
     </form>
