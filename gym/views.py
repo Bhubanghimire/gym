@@ -55,8 +55,8 @@ def Logout(request):
 
 def Add_Enquiry(request):
     error = ""
-    if not request.user.is_staff:
-        return redirect('login')
+    # if not request.user.is_staff:
+    #     return redirect('login')
     if request.method == 'POST':
         n = request.POST['name']
         c = request.POST['contact']
@@ -154,6 +154,7 @@ def Add_Member(request):
         return redirect('login')
     if request.method == 'POST':
         n = request.POST['name']
+        
         c = request.POST['contact']
         e = request.POST['emailid']
         a = request.POST['age']
@@ -166,8 +167,8 @@ def Add_Member(request):
         plan = Plan.objects.filter(name=p).first()
         # attendance = Attendance.objects.filter(status=at).first()
         try:
-            Member.objects.create(name=n, contact=c, emailid=e, age=a, gender=g, plan=plan,
-                                  joindate=joindate, expiredate=expiredate, initialamount=initialamount)
+            
+            Member.objects.create(name=n, contact=c, emailid=e, age=a, gender=g, plan=plan,joindate=joindate, expiredate=expiredate, initialamount=initialamount)
 
             m = Member.objects.get(contact=c)
             year = m.get_year()
@@ -178,6 +179,7 @@ def Add_Member(request):
             error = "no"
         except:
             error = "yes"
+    # print("testing")
     d = {'error': error, 'plan': plan1}
     return render(request, 'add_member.html', d)
 

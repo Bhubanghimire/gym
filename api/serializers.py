@@ -8,7 +8,7 @@ class MemberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Member
         fields = ('id', 'name', 'contact', 'emailid', 'age', 'gender', 'plan',
-                  'joindate', 'expiredate', 'initialamount', 'attendance')
+                  'joindate', 'expiredate', 'initialamount')
 
 
 class AttendanceSerializer(serializers.ModelSerializer):
@@ -33,6 +33,7 @@ class EquipmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Equipment
         fields = ('id', 'name', 'price', 'unit', 'date', 'description')
+
 
 
 class PlanSerializer(serializers.ModelSerializer):

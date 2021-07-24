@@ -5,7 +5,8 @@ from .views import (MemberAPIView, DetailMemberAPIView, AttendanceAPIView, Detai
 
 
 urlpatterns = [
-    path('member/', MemberAPIView.as_view()),
+    
+    path('member/', MemberAPIView.as_view(),name="member"),
     path('member/<int:pk>/', DetailMemberAPIView.as_view()),
 
     path('attendance/', AttendanceAPIView.as_view()),

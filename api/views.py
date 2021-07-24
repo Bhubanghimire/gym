@@ -8,6 +8,7 @@ from .serializers import MemberSerializer, AttendanceSerializer, AttendanceRepor
 
 class MemberAPIView(generics.ListCreateAPIView):
     queryset = Member.objects.all()
+    # permission_classes = [AllowAny]
     serializer_class = MemberSerializer
 
 
@@ -33,6 +34,7 @@ class AttendanceReportAPIView(generics.ListCreateAPIView):
 
 class DetailAttendanceReportAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = AttendanceReport.objects.all()
+    # permission_classes = [AllowAny]
     serializer_class = AttendanceReportSerializer
 
 
